@@ -27,16 +27,18 @@
 
 # Для числа 2 потріботно повернути 2, тому що число 2 складається з однієї цифри.
 
-
 def sumNum(num):
-	while len(str(num)) > 1: 
-		sum = 0 
-		for i in range(len(str(num))):
-			sum += int(str(num)[i])
-		num = sum
-	return num
+	if str(num).isdigit():
+		while len(str(num)) > 1: 
+			sum = 0 
+			for i in range(len(str(num))):
+				sum += int(str(num)[i])
+			num = sum
+		return num
+	else:
+		print ('Illegal sumNum arg')
 
 print(sumNum(38) == 2) 
 print(sumNum(40) == 4)
 print(sumNum(48) == 3) 
-print(sumNum(2) == 2) 
+print(sumNum(2) == 2)
